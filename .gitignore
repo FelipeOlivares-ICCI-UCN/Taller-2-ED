@@ -2,3 +2,6 @@
 Taller 2.cbp
 bin/
 obj/
+
+*.layout
+/.depend
