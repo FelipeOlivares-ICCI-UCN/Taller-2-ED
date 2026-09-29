@@ -154,7 +154,7 @@ public:
             }
         else
             {
-                std::cout << search(root, value).getValue() << std::endl;
+                std::cout << node->getValue() << std::endl;
             }
 
 
