@@ -103,15 +103,15 @@ private:
         return node;
     }
 
-    AVLNode<T>* search(AVLNode<T>* root, T value)
+    AVLNode<T>* search(AVLNode<T>* node, T value)
     {
-        if (root == nullptr) return nullptr;
+        if (node == nullptr) return nullptr;
 
-        if (root->getValue() == value) return root;
+        if (node->getValue() == value) return node;
 
-        if (value < root->getValue()) return search(root->getLeft(), value);
+        if (value < node->getValue()) return search(node->getLeft(), value);
 
-        return search(root->getRight(), value);
+        return search(node->getRight(), value);
     }
 
 
