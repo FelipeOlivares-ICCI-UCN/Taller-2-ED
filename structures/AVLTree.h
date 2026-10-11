@@ -131,6 +131,35 @@ private:
         preorder(node->getRight());
     }
 
+    void inorder(AVLNode<T>* node)
+    {
+        if (node == nullptr)
+            {
+                return;
+            }
+
+
+        inorder(node->getLeft());
+
+        std::cout << node->getValue() << " ";
+
+        inorder(node->getRight());
+    }
+
+    void postorder(AVLNode<T>* node)
+    {
+        if (node == nullptr)
+            {
+                return;
+            }
+
+
+        postorder(node->getLeft());
+        postorder(node->getRight());
+        std::cout << node->getValue() << " ";
+
+    }
+
 public:
     AVLTree():
         root(nullptr){};
@@ -145,6 +174,16 @@ public:
         preorder(root);
     }
 
+    void printInOrder()
+    {
+        inorder(root);
+    }
+
+    void printPostOrder()
+    {
+        postorder(root);
+    }
+
     void search(T value)
     {
         AVLNode<T>* node = search(root, value);
@@ -157,6 +196,13 @@ public:
                 std::cout << node->getValue() << std::endl;
             }
 
+
+    }
+
+    void printTreeInfo()
+    {
+        std::cout<< "Balance Factor: "<< balanceFactor(root) << " ";
+        std::cout<< "Height: "<< height(root) << std::endl;
 
     }
 
