@@ -16,7 +16,7 @@ public:
             hasTrauma(hasTrauma), neuroSintoms(neuroSintoms), requiresSurgery(requiresSurgery), estimedStay(estimedStay)
         {};
 
-    int getID()
+    int getID() const
     {
         return this->ID;
     }
@@ -26,27 +26,27 @@ public:
         return this->name;
     }
 
-    int getAge()
+    int getAge() const
     {
         return this->age;
     }
 
-    float getTemperature()
+    float getTemperature() const
     {
         return this->temperature;
     }
 
-    int getSistBloodPressure()
+    int getSistBloodPressure() const
     {
         return this->sistBloodPressure;
     }
 
-    int getDiasBloodPressure()
+    int getDiasBloodPressure() const
     {
         return this->diasBloodPressure;
     }
 
-    int getPain()
+    int getPain() const
     {
         return this->pain;
     }
@@ -58,7 +58,7 @@ public:
         return kindOfPain;
     }
 
-    bool getHasTrauma()
+    bool getHasTrauma() const
     {
         if (hasTrauma == 0)
             {
@@ -67,7 +67,7 @@ public:
         return true;
     }
 
-    bool getHasNeuroSyntoms()
+    bool getHasNeuroSyntoms() const
     {
         if (neuroSintoms == 0)
             {
@@ -77,7 +77,7 @@ public:
 
     }
 
-    bool getRequiresSurgery()
+    bool getRequiresSurgery() const
     {
         if (requiresSurgery == 0)
             {
@@ -86,7 +86,7 @@ public:
         return true;
     }
 
-    int getEstimedStay()
+    const int getEstimedStay() const
     {
         return this->estimedStay;
     }
