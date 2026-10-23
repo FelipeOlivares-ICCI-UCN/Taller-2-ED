@@ -5,3 +5,6 @@ obj/
 
 *.layout
 /.depend
+
+#Clion Stuff
+.idea/
