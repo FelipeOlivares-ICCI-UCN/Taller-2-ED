@@ -12,9 +12,6 @@ void readFileData(const std::string& filename, Queue<Paciente>& pacientes) {
 
     std::cout << filename << " was found!" << std::endl;
 
-
-
-
     std::string line;
     while (getline(file, line)) {
         std::stringstream ss(line);

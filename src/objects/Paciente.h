@@ -5,16 +5,24 @@
 class Paciente
 {
 private:
-    int ID, age, pain, hasTrauma, neuroSintoms, requiresSurgery, estimedStay, sistBloodPressure, diasBloodPressure;
+    int ID;
+    std::string name;
+    int age;
     float temperature;
-    std::string name, kindOfPain;
+    int sistBloodPressure, diasBloodPressure, pain;
+    std::string kindOfPain;
+    int hasTrauma;
+    int neuroSintoms, requiresSurgery, estimedStay;
 public:
-    Paciente(int ID, std::string name, int age, float temperature,
-             int sistBloodPressure, int diasBloodPressure, int pain, std::string kindOfPain, int hasTrauma, int neuroSintoms,
-             int requiresSurgery, int estimedStay):
+    Paciente() = default;
+    Paciente(int ID, std::string name, int age = 18, float temperature = 35.5,
+             int sistBloodPressure = 100, int diasBloodPressure = 70, int pain = 0, std::string kindOfPain = "Otro", int hasTrauma = 0, int neuroSintoms = 0,
+             int requiresSurgery = 0, int estimedStay = 0):
             ID(ID), name(name), age(age), temperature(temperature), sistBloodPressure(sistBloodPressure), diasBloodPressure(diasBloodPressure), pain(pain), kindOfPain(kindOfPain),
             hasTrauma(hasTrauma), neuroSintoms(neuroSintoms), requiresSurgery(requiresSurgery), estimedStay(estimedStay)
         {};
+
+    ~Paciente(){}
 
     int getID() const
     {
@@ -86,9 +94,14 @@ public:
         return true;
     }
 
-    const int getEstimedStay() const
+    int getEstimedStay() const
     {
         return this->estimedStay;
+    }
+
+    void showInfo() const
+    {
+        std::cout << this->name << "(" << this->ID << ")" << std::endl;
     }
 
 
