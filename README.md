@@ -17,3 +17,23 @@ ID;Name;Age;BodyHeat;BloodPressure;Pain;KindOfPain;Trauma;NeurologicalSimtoms;Re
 - RequiresSurgery: int, 0 if itsnt needed and 1 if it is.
 - Estimed Stay, int, measured in days.
 
+## Choice Tree
+First Value: Yes
+Second Value: No
+
+- Pain is Greater than 6 (Emergency)
+    - Has Trauma? (Accident or Heart attack)
+        - Has neurological symptoms (Was hit on the head);
+            - Neurology (Self explanatory)
+            - Traumatology (Another accident)
+        - Has pain in the chest? (KindOfPain == "Pecho")
+            - Cardiology (Heart Attack)
+            - Urgency (Another unexplained pain)
+    - Estimed Stay is more than 2? (somewhat long stay)
+        - Age is less than 14
+            - Pediatry (Child recovery)
+            - Hospitalization (Adults)
+        - Need Surgery?
+            - Surgery (Self Explanatory)
+            - General Medicine (Short doctor visit) (Default case)
+Due to the default values in class Paciente, we are allowed to not worry about not having enough info.
